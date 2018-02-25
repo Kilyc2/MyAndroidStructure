@@ -1,7 +1,9 @@
 apply plugin: 'kotlin'
 
 dependencies {
-  compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+  def domainDependencies = rootProject.ext.domainDependencies
+
+  compile domainDependencies.kotlin
 
   implementation fileTree(dir: 'libs', include: ['*.jar'])
 }

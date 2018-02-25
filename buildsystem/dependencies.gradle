@@ -1,0 +1,32 @@
+allprojects {
+  repositories {
+    google()
+    jcenter()
+  }
+}
+
+ext {
+  kotlin_version = '1.2.21'
+  support_version = '26.1.0'
+  constraint_version = '1.0.2'
+
+  junit_version = '4.12'
+  runner_version = '1.0.1'
+  espresso_version = '3.0.1'
+
+
+  appDependencies = [kotlin      : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
+                     appcompat_v7: "com.android.support:appcompat-v7:$support_version",
+                     design      : "com.android.support:design:$support_version",
+                     constraint  : "com.android.support.constraint:constraint-layout:$constraint_version"]
+
+  appTestDependencies = [junit              : "junit:junit:$junit_version",
+                         android_text_runner: "com.android.support.test:runner:$runner_version",
+                         espresso_core      : "com.android.support.test.espresso:espresso-core:$espresso_version"]
+
+  dataDependencies = [kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"]
+
+  dataTestDependencies = [junit: "junit:junit:$junit_version"]
+
+  domainDependencies = [kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"]
+}

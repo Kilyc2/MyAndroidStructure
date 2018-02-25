@@ -20,10 +20,13 @@ android {
 }
 
 dependencies {
-  compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+  def dataDependencies = rootProject.ext.dataDependencies
+  def dataTestDependencies = rootProject.ext.dataTestDependencies
+
+  compile dataDependencies.kotlin
 
   implementation project(':domain')
   implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-  testImplementation 'junit:junit:4.12'
+  testImplementation dataTestDependencies.junit
 }
