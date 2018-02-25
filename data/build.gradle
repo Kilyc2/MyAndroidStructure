@@ -20,9 +20,10 @@ android {
 }
 
 dependencies {
-  implementation fileTree(dir: 'libs', include: ['*.jar'])
-
   compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+  implementation project(':domain')
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
 
   testImplementation 'junit:junit:4.12'
 }
